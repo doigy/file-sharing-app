@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Website</title>
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'home_stylesheet.css') }}">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+        <link rel = "stylesheet" href = "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity = "sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin = "anonymous"/>
+    </head>
+    <body>
+        <div class = "main">
+            <div class = "entry">
+                <form action = {{ url_for('home_post') }} method = "POST" enctype = "multipart/form-data">
+                    <input type = "radio" name = "option" value = "existing" checked>
+                    choose a user:
+                    <select class = "users" name = "users_choice">
+                        {% for o in usersdisplay %}
+                        <option value = "{{o}}">{{o}}</option>
+                        {% endfor %}
+                    </select>
+                    <br/><br/>
+                    <input type = "radio" name = "option" value = "new">
+                    add new user:
+                    <input type = "text" name = "new_user" class = "name">
+                    <br/><br/>
+                    upload a file:
+                    <br/><br/>
+                    <input type = "file" name = "file" class = "upload">
+                    <button type = "submit" name = "action" class = "button">
+                        <i class = "fas fa-upload"></i>
+                    </button>
+                </form>
+            </div>
+            <br/>
+            <div class = "download">
+                <form action = "{{ url_for('download') }}" method = "POST" enctype = "multipart/form-data">
+                    files for you:
+                    <br/><br/>
+                    <input type = "radio" name = "" value = "delete_file"/>
+                    <label>Delete file after downloading</label>
+                    <br/><br/>
+                    <div class = "download-textbox-button">
+                        <select class = "file" name = "files_choice">
+                            {% for i in filesdisplay %}
+                            <option value = "{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                        <button type = "submit" name = "action" class = "button">
+                            <i class = "fas fa-download"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            var ans = "{{ process }}";
+            if (ans == 1){
+                window.alert("File has been uploaded");
+            }else if (ans == 0){
+                window.alert("File has not been uploaded");
+            }else{
+            //pass
+            }
+        </script>
+    </body>
+</html>

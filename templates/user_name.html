@@ -1,0 +1,51 @@
+<html>
+  <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+  <head>
+    <title>Website</title>
+  </head>
+  <body>
+    <p id = "demo"></p>
+    <button type = "button" onclick = "document.write('Hello')">Click Me</button>
+    <button type = "button" onclick = "window.print()">Click Me 1</button>
+    <button type = "button" onclick = "this.innerHTML = Date()">time?</button>
+    <button type = "button" onclick = "displayDate()">time??</button>
+    <script>
+      document.getElementById("demo").innerHTML = 5 + 6;
+      document.write("Hello");
+      window.alert("NOO");
+      console.log("Blah");
+      var $x;
+      $x = 10;
+      document.write($x * 10);
+      document.write($x + 10);
+      document.write($x / 10);
+      var _y;
+      _y = "Hello " + " World";
+      document.write(_y);
+      function add() {
+        return 5 * 6;
+      }
+      document.write(add());
+      var car = {
+        name:"Vigo",
+        model:"2015",
+        color:"Black",
+        years_owned:5,
+        mileage: function(){
+          return 20 * this.years_owned;
+        }
+      };
+      document.write(car.name);
+      document.write(car["model"]);
+      document.write(car.color);
+      document.write(car.mileage());
+      var cars = [
+        "mercedes",
+        "bmw",
+        "toyota",
+        "prosche"
+      ];
+      document.write(cars[0]);
+    </script>
+  </body>
+</html>

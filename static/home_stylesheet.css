@@ -1,0 +1,39 @@
+body{
+    background-color: #1A1A1A;
+    color: #EEEEEE;
+    font-size: 20px;
+    font-family: Verdana;
+    padding: 20px;
+}
+
+.main{
+    background-color: transparent;
+    height: 400px;
+    width: 500px;
+    display: grid;
+    grid-template-rows: 40% 25% 35%;
+    border: 2px solid #EEEEEE;
+    padding: 20px;
+}
+
+.upload{
+    font-size: 20px;
+    width: 300px;
+}
+
+.button{
+    background: none;
+    color: #EEEEEE;
+    border: none;
+    font-size: 25px;
+}
+
+.users, .name, .file{
+    font-size: 18px;
+    width: 200px;
+}
+
+.download-textbox-button{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
